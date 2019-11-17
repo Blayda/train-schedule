@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--Bootstrap-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>Train</title>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-database.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div
+            class="jumbotron text-center text-white"
+            style="background: rgb(94, 63, 63);"
+          >
+            <h1 class="display-4">Anytime is Train Time</h1>
+            <h2>Choo Choo. Chee Chee.</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header text-white" style="background: blue">
+              <strong>Current Train Schedule</strong>
+            </div>
+            <div class="card-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Train Name</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Frequency (min)</th>
+                    <th scope="col">Next Arrival</th>
+                    <th scope="col">Minutes Away</th>
+                  </tr>
+                </thead>
+                <tbody id="trainRow">
+                  <tr id="TrainInfo">
+                    <td id="name"></td>
+                    <td id="destination"></td>
+                    <td id="frequency"></td>
+                    <td id="arrival"></td>
+                    <td id="minAway"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <br />
+
+          <div class="card">
+            <div class="card-header text-white" style="background: blue">
+              <strong>Add Train</strong>
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="form-group">
+                  <label for="trainName">Train Name </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="trainName"
+                    aria-describedby="emailHelp"
+                    placeholder=" "
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="destinationName">Destination </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="destinationName"
+                    aria-describedby="emailHelp"
+                    placeholder=" "
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="firstTrainTime"
+                    >First Train Time (HH:mm - Military Time )
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="firstTrainTime"
+                    aria-describedby="emailHelp"
+                    placeholder=" "
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="frequencyRate">Frequency (min) </label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="frequencyRate"
+                    aria-describedby="emailHelp"
+                    placeholder=" "
+                  />
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="addTrain">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Bootstrap JS-->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
